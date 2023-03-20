@@ -1,9 +1,13 @@
+import { Container } from './layout';
 import El from './library/El';
 import 'flowbite';
-import { login } from './components';
-export function app(params) {
-  return El({
+import { login, navbar } from './components';
+function App() {
+  const app = El({
     element: 'div',
-    child: login(),
+    child: [navbar()],
   });
+  return Container(app);
 }
+
+export default App;
