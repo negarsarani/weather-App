@@ -4,21 +4,27 @@ export function MainCard() {
   return El({
     element: 'div',
     className:
-      'backdrop-blur-sm bg-slate-300 bg-opacity-30 text-white flex flex-col items-center justify-center ',
+      'backdrop-blur-sm bg-slate-300 bg-opacity-30 text-white flex flex-col items-center justify-center px-10 pb-9 pt-5 gap-4 rounded-[1.2rem]',
     child: [
       El({
-        element: 'span',
-        className: 'text-[3.5rem]',
-        child: '20 C',
-      }),
-      El({
-        element: 'span',
-        className: 'text',
-        child: 'Clear',
+        element: 'div',
+        className: 'flex flex-col items-center justify-center',
+        child: [
+          El({
+            element: 'span',
+            className: 'text-[4rem]',
+            child: '20 C',
+          }),
+          El({
+            element: 'span',
+            className: 'text',
+            child: 'Clear',
+          }),
+        ],
       }),
       El({
         element: 'div',
-        className: 'text flex gap-3',
+        className: 'text flex gap-5',
         child: [
           El({
             element: 'div',
@@ -26,24 +32,28 @@ export function MainCard() {
             child: [
               El({
                 element: 'span',
+                className: 'text-[1.2rem]',
                 child: '18 C',
               }),
               El({
                 element: 'span',
+                className: 'opacity-50 text-[.9rem]',
                 child: 'RealFeel',
               }),
             ],
           }),
           El({
             element: 'div',
-            className: 'flex flex-col',
+            className: 'flex flex-col items-center justify-center',
             child: [
               El({
                 element: 'span',
+                className: 'text-[1.2rem]',
                 child: '63%',
               }),
               El({
                 element: 'span',
+                className: 'opacity-50 text-[.9rem]',
                 child: 'Humidity',
               }),
             ],

@@ -1,12 +1,13 @@
 import { Container } from './layout';
 import El from './library/El';
 import 'flowbite';
-import { CenterCard, DaysCards, navbar } from './components';
+import { Main, navbar } from './components';
 function App() {
   const app = El({
     element: 'div',
-    className: '',
-    child: [navbar(), CenterCard(), DaysCards()],
+    className: ' flex flex-col h-full w-full ',
+    // child:"k"
+    child: [navbar(), Main()],
   });
   return Container(app);
 }

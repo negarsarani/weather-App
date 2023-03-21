@@ -7,11 +7,16 @@ html {
   width: 100%;
   height: 100%;
 }
+#app{
+width: 100%;
+height: 100%;
+}
 body {
   background-image: url(./assets/img/background.jpg);
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
+  /* background-color: aqua; */
 }
 @font-face { 
   font-family:"Sarabun" ;
