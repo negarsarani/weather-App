@@ -14,6 +14,10 @@ body {
   background-size: cover;
 }
 @font-face { 
-    font-family:"Sarabun" ;
-    src: url(./assets/fonts/Sarabun-Regular.ttf);
+  font-family:"Sarabun" ;
+  src: url(./assets/fonts/Sarabun-Regular.ttf);
+}
+@font-face { 
+  font-family:"Lobster" ;
+  src: url(./assets/fonts/Lobster-Regular.ttf);
 }
