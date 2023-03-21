@@ -5,6 +5,7 @@ import { login, navbar } from './components';
 function App() {
   const app = El({
     element: 'div',
+    className: "",
     child: [navbar()],
   });
   return Container(app);

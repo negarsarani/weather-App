@@ -5,7 +5,7 @@ import { Main_header } from './Main-header';
 export function navbar() {
   return El({
     element: 'div',
-    className: 'bg-red-300 flex ',
+    className: ' flex ',
     child: [location() , Main_header()],
   });
 }
