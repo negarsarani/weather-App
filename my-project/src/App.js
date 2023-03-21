@@ -11,5 +11,4 @@ function App() {
   });
   return Container(app);
 }
-
 export default App;

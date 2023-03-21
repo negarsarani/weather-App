@@ -1,6 +1,9 @@
 import El from '../../../../library/El';
 
-export function MainCard() {
+export function MainCard(data) {
+  console.log(data.temp)
+  // let dataCard = data
+//  console.log(dataCard);
   return El({
     element: 'div',
     className:
@@ -13,7 +16,7 @@ export function MainCard() {
           El({
             element: 'span',
             className: 'text-[4rem]',
-            child: '20 C',
+            child: ` C`,
           }),
           El({
             element: 'span',

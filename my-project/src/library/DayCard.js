@@ -1,6 +1,6 @@
 import El from './El';
 
-function DayCard() {
+function DayCard(title, img , tempture , status) {
   return El({
     element: 'div',
     className:
