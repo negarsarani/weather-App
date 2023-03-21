@@ -6,9 +6,9 @@ let url_current = `https://api.openweathermap.org/data/2.5/weather?appid=${key}`
 
 export function CurrentData(valueSearch) {
   let data = getData(url_current, `&q=${valueSearch}`);
-  data.then((res) => RenderMainCard(res));
+  data.then((res) => currentObj(res));
 }
-export function RenderMainCard(res) {
+export function currentObj(res) {
   const [temp, status, icon, feels, humid] = [
     res.main.temp,
     res.weather[0].main,
@@ -23,5 +23,6 @@ export function RenderMainCard(res) {
     feels: ConvertCelsius(feels),
     humid: humid,
   };
-  return obj;
+  console.log(obj);
+  return MainCard(obj);
 }

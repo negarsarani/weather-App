@@ -1,9 +1,8 @@
 import El from '../../../../library/El';
+import { currentObj } from './functions';
 
 export function MainCard(data) {
-  console.log(data.temp)
-  // let dataCard = data
-//  console.log(dataCard);
+  console.log(data);
   return El({
     element: 'div',
     className:
@@ -16,12 +15,12 @@ export function MainCard(data) {
           El({
             element: 'span',
             className: 'text-[4rem]',
-            child: ` C`,
+            child: `${data.temp} C`,
           }),
           El({
             element: 'span',
             className: 'text',
-            child: 'Clear',
+            child: `${data.status}`,
           }),
         ],
       }),
@@ -36,7 +35,7 @@ export function MainCard(data) {
               El({
                 element: 'span',
                 className: 'text-[1.2rem]',
-                child: '18 C',
+                child: `${data.feels} C`,
               }),
               El({
                 element: 'span',
@@ -52,7 +51,7 @@ export function MainCard(data) {
               El({
                 element: 'span',
                 className: 'text-[1.2rem]',
-                child: '63%',
+                child: `${data.humid}`,
               }),
               El({
                 element: 'span',
