@@ -3,7 +3,7 @@ const El = ({ element, child, ...rest }) => {
   for (const key in rest) {
     el[key] = rest[key];
   }
-  Array.isArray(child) ? el.append(...child) : child && el.append(child);
+  (Array.isArray(child)) ? el.append(...child) : child && el.append(child)
   return el;
 };
 
