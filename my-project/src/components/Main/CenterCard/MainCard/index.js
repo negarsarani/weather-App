@@ -1,42 +1,19 @@
 import El from '../../../../library/El';
 import { CurrentData } from './functions';
 
-export function MainCard(data = 'tehran') {
-  // let obj;
+export function MainCard() {
   const card = El({
     element: 'div',
-    child: '',
     id: 'card',
   });
-  CurrentData(data).then((data) => {
-    render(data, card);
-    console.log(data);
+  CurrentData().then((data) => {
+    renderMainCard(data, card);
   });
   return card;
-  // console.log(obj);
-  // }
-  //  return  aa().map((item) => console.log(item));
-  // console.log('end');
-  //  let s = data.map( item =>{
-  // return item[0]
-
-  // })
-  // console.log(s);
-  //  let x = CurrentData().then((res) => {
-  //       return El({
-  //         element: 'span',
-  //         className: 'bg-red-300',
-  //         child: 'NEGAR',
-  //       });
-  //   });
 }
-export function render(arr, elem) {
-  // let data = arr;
-  // console.log(data);
-  //  let ss = data
-  //  console.log(...data);
-  elem.innerHTML = ""
-  
+export function renderMainCard(arr, elem) {
+  elem.innerHTML = '';
+
   elem.appendChild(
     El({
       element: 'div',
@@ -53,12 +30,24 @@ export function render(arr, elem) {
               child: `${arr.temp} C`,
             }),
             El({
-              element: 'span',
-              className: 'text',
-              child: `${arr.status}`,
+              element: 'div',
+              className: 'flex flex-col items-center justify-center ',
+              child: [
+                El({
+                  element: 'img',
+                  className: 'w-20 h-20',
+                  src: `http://openweathermap.org/img/wn/${arr.icon}@2x.png`,
+                }),
+                El({
+                  element: 'span',
+                  className: 'text',
+                  child: `${arr.status}`,
+                }),
+              ],
             }),
           ],
         }),
+
         El({
           element: 'div',
           className: 'text flex gap-5',
@@ -101,4 +90,3 @@ export function render(arr, elem) {
     })
   );
 }
-// console.log(MainCard());

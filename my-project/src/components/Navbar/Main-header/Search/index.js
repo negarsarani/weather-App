@@ -1,5 +1,6 @@
 import El from '../../../../library/El';
-import { MainCard  , render} from '../../../Main/CenterCard/MainCard';
+import { renderLocation } from '../../../../library/Location';
+import { renderMainCard } from '../../../Main/CenterCard/MainCard';
 import { CurrentData } from '../../../Main/CenterCard/MainCard/functions';
 // import { RenderMainCard } from '../../../Main/CenterCard/MainCard/functions';
 
@@ -15,18 +16,14 @@ export function Search() {
       placeholder: 'Search your city...',
       onchange: function name(e) {
         const value = e.target.value;
-        // console.log(value);
-        // const card = El({
-        //   element: 'div',
-        //   child: '',
-        //   id: 'card',
-        // });
+
         const card = document.getElementById('card');
-        console.log(card);
+        const location = document.getElementById('location');
         CurrentData(value).then((data) => {
-          console.log(data);
-          render(data, card);
-          console.log(data);
+          renderMainCard(data, card);
+          renderLocation(data, location);
+          console.log(location);
+
         });
       },
     }),

@@ -1,20 +1,21 @@
-import { MainCard, render } from '..';
 import ConvertCelsius from '../../../../../library/Celsius';
 import { getData, key } from '../../../../../library/Fetch/GetApi';
 
 let url_current = `https://api.openweathermap.org/data/2.5/weather?appid=${key}&units=metric`;
 
-export async function CurrentData(valueSearch) {
+export async function CurrentData(valueSearch = "tehran") {
   return new Promise((resolve, reject) => {
     let data = getData(url_current, `&q=${valueSearch}`);
     data
       .then((res) => {
-        const [temp, status, icon, feels, humid] = [
+        console.log(res);
+        const [temp, status, icon, feels, humid , name] = [
           res.main.temp,
           res.weather[0].main,
           res.weather[0].icon,
           res.main.feels_like,
           res.main.humidity,
+          res.name
         ];
         const obj = {
           temp: parseInt(temp),
@@ -22,33 +23,12 @@ export async function CurrentData(valueSearch) {
           icon: icon,
           feels: parseInt(feels),
           humid: humid,
+          name:name
         };
-        // console.log(obj);
         resolve(obj); // resolve the promise with the `obj` variable
       })
       .catch((err) => {
         reject(err); // reject the promise if there is an error
       });
   });
-  
-  //   let data = getData(url_current, `&q=${valueSearch}`);
-  //   let arr = [];
-  //   const res = await data; // wait for the promise to resolve
-  //   console.log(res);
-  //   const [temp, status, icon, feels, humid] = [
-  //     res.main.temp,
-  //     res.weather[0].main,
-  //     res.weather[0].icon,
-  //     res.main.feels_like,
-  //     res.main.humidity,
-  //   ];
-  //   const obj = {
-  //     temp: ConvertCelsius(temp),
-  //     status: status,
-  //     icon: icon,
-  //     feels: ConvertCelsius(feels),
-  //     humid: humid,
-  //   };
-  //   arr.push(obj);
-  //   return arr;
 }
