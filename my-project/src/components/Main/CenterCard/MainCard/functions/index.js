@@ -1,4 +1,3 @@
-import ConvertCelsius from '../../../../../library/Celsius';
 import { getData, key } from '../../../../../library/Fetch/GetApi';
 
 let url_current = `https://api.openweathermap.org/data/2.5/weather?appid=${key}&units=metric`;
@@ -8,7 +7,6 @@ export async function CurrentData(valueSearch = "tehran") {
     let data = getData(url_current, `&q=${valueSearch}`);
     data
       .then((res) => {
-        console.log(res);
         const [temp, status, icon, feels, humid , name] = [
           res.main.temp,
           res.weather[0].main,

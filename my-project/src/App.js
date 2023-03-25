@@ -6,7 +6,6 @@ function App() {
   const app = El({
     element: 'div',
     className: ' flex flex-col h-full w-full ',
-    // child:"k"
     child: [navbar(), Main()],
   });
   return Container(app);

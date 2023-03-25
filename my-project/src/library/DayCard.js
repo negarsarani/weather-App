@@ -1,6 +1,6 @@
 import El from './El';
 
-function DayCard(title, img , tempture , status) {
+function DayCard(date, temp , icon , description, status) {
   return El({
     element: 'div',
     className:
@@ -8,22 +8,21 @@ function DayCard(title, img , tempture , status) {
     child: [
       El({
         element: 'span',
-        child: 'Sunday',
-        // className:""
+        child: `${date}`,
       }),
       El({
         element: 'img',
         className: 'w-16 h-16',
-        src: 'http://openweathermap.org/img/wn/04d@2x.png',
+        src: `http://openweathermap.org/img/wn/${icon}@2x.png`,
       }),
       El({
         element: 'span',
-        child: '18 C',
+        child: `${temp} C`,
       }),
       El({
         element: 'span',
         className: 'sm:text-sm text-[.5rem]',
-        child: 'Mostly Sunny',
+        child: `${description}`,
       }),
     ],
   });
