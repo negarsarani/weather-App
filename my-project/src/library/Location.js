@@ -1,4 +1,4 @@
-import { CurrentData } from '../components/Main/CenterCard/MainCard/functions';
+import { CityCountry } from '../components';
 import El from './El';
 
 function location(className) {
@@ -15,12 +15,13 @@ function location(className) {
 }
 
 export function renderLocation(data, elem) {
+  console.log(data);
   elem.innerHTML = '';
   elem.appendChild(
     El({
       element: 'span',
       className: 'p-1',
-      child: ` ${data.name} , Iran`,
+      child: ` ${data.name}`,
     })
   );
 }

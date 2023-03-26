@@ -1,8 +1,10 @@
 import { Dayname } from '../../../../library/Dayname';
 import { getData, key } from '../../../../library/Fetch/GetApi';
 
+
 let url_days = `https://api.openweathermap.org/data/2.5/forecast?appid=${key}&units=metric`;
 export async function FutureData(valueSearch = 'tehran') {
+  try {
     const data = await getData(url_days, `&q=${valueSearch}`);
     const arr = [];
     const step = 8;
@@ -25,5 +27,7 @@ export async function FutureData(valueSearch = 'tehran') {
       arr.push(obj);
     }
     return arr;
+  } catch (error) {
+    console.log(error);
   }
-  
+}
