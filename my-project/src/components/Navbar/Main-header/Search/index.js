@@ -29,10 +29,7 @@ export function Search() {
             const card = document.getElementById('card');
             const value = e.target.value;
             const daysCard = document.getElementById('days-cards');
-            CityCountry(value).then((data) => {
-              console.log(data);
-              renderLocation(data, item)
-            });
+            CityCountry(value);
             CurrentData(value).then((data) => {
               [...location2].map((item) => renderLocation(data, item));
               renderMainCard(data, card);

@@ -1,4 +1,4 @@
-import { CityCountry } from '../components';
+import { CurrentData } from '../components/Main/CenterCard/MainCard/functions';
 import El from './El';
 
 function location(className) {
@@ -15,7 +15,6 @@ function location(className) {
 }
 
 export function renderLocation(data, elem) {
-  console.log(data);
   elem.innerHTML = '';
   elem.appendChild(
     El({
