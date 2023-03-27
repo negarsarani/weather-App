@@ -1,4 +1,4 @@
-const El = ({ element, child, dataset, ...rest }) => {
+const El = ({ element, child, dataset, eventListener ,...rest }) => {
   const el = document.createElement(element);
   for (const key in rest) {
     el[key] = rest[key];
@@ -11,7 +11,7 @@ const El = ({ element, child, dataset, ...rest }) => {
     }
   }
   if (eventListener) {
-    eventListener.map((el) => elem.addEventListener(el.event, el.callback));
+    eventListener.map((elem) => el.addEventListener(elem.event, elem.callback));
   }
   return el;
 };
