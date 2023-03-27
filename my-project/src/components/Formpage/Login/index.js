@@ -7,12 +7,6 @@ export function Login(form) {
     El({
       element: 'form',
       onsubmit: submit,
-       eventListener: [
-                  {
-                    event: 'click',
-                    callback: changeForm,
-                  },
-                ],
       child: [
         El({
           element: 'div',

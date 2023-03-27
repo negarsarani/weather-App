@@ -1,4 +1,5 @@
 import El from '../../library/El';
+import { Route } from '../../routes';
 import { submit } from './functions';
 import { Login } from './Login';
 import { SingUp } from './Signup';
@@ -23,7 +24,7 @@ export function FormPage() {
               El({
                 element: 'button',
                 className: 'hover:text-black hover:text-xl ',
-                child: 'Sing up',
+                child: 'Sign up',
                 eventListener: [
                   {
                     event: 'click',
@@ -52,28 +53,7 @@ export function FormPage() {
             element: 'div',
             className: 'form ',
             id: 'form',
-            child: El({
-              element: 'div',
-              className:
-                'flex flex-col items-center text-xl  gap-2 font-Lobster',
-              child: [
-                El({
-                  element: 'p',
-                  className: 'text-3xl',
-                  child: 'Wellcome ',
-                }),
-                El({
-                  element: 'p',
-                  className: '',
-                  child: 'This is weather Api Website :)',
-                }),
-                El({
-                  element: 'p',
-                  className: 'text-[#354458]',
-                  child: ' please login or sign up',
-                }),
-              ],
-            }),
+           
           }),
         ],
       }),
@@ -82,10 +62,12 @@ export function FormPage() {
   function changeForm(e) {
     const form = document.getElementById('form');
     const targetText = e.target.innerText;
-    targetText === 'Sing up'
-      ? SingUp(form)
+    // console.log(ra);
+    targetText === 'Sign up'
+      ? history.pushState(null, null, '/signup')
       : targetText === 'Login'
-      ? Login(form)
+      ? history.pushState(null, null, '/login')
       : null;
+      Route()
   }
 }

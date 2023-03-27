@@ -3,16 +3,16 @@ import El from './library/El';
 import 'flowbite';
 import { Main, navbar } from './components';
 import { FormPage } from './components/Formpage';
+import { Route } from './routes';
 function App() {
   const app = El({
     element: 'div',
     className: 'w-full h-full  ',
+    id: 'routes',
     child: [
-      El({
-        element: 'div',
-        className: 'w-full flex flex-col h-full items-center ',
-        child: [navbar(), Main()],
-      }),
+      Route(),
+
+      
 
       // FormPage()
     ],
