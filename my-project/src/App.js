@@ -8,13 +8,13 @@ function App() {
     element: 'div',
     className: 'w-full h-full  ',
     child: [
-      // El({
-      //   element: 'div',
-      //   className: 'w-full flex flex-col h-full items-center ',
-      //   child: [navbar(), Main()],
-      // }),
+      El({
+        element: 'div',
+        className: 'w-full flex flex-col h-full items-center ',
+        child: [navbar(), Main()],
+      }),
 
-      FormPage()
+      // FormPage()
     ],
   });
   return Container(app);

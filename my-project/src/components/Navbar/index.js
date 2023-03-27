@@ -7,7 +7,7 @@ import { Status_icon } from './Main-header/Status_icon';
 export function navbar() {
   return El({
     element: 'div',
-    className: ' flex bg-yellow-300 w-full',
+    className: ' flex w-full',
     child: [
       location("hidden justify-end lg:flex lg:w-3/12 mt-3 rounded-r-xl ") 
       , Main_header()],
