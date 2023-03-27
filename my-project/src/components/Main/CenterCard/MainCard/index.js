@@ -18,7 +18,7 @@ export function renderMainCard(arr, elem) {
     El({
       element: 'div',
       className:
-        'backdrop-blur-sm bg-slate-300 bg-opacity-30 text-white flex flex-col items-center justify-center px-10 pb-9 pt-5 gap-4 rounded-[1.2rem]',
+        'backdrop-blur-sm bg-slate-500 bg-opacity-60 text-white flex flex-col items-center justify-center px-10 pb-9 pt-5 gap-4 rounded-[1.2rem]',
       child: [
         El({
           element: 'div',

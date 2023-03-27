@@ -4,7 +4,7 @@ function DayCard(date, temp , icon , description, status) {
   return El({
     element: 'div',
     className:
-      'backdrop-blur-sm bg-slate-300 bg-opacity-30 text-white flex flex-col items-center justify-center rounded-[1.5rem] p-5',
+      'backdrop-blur-sm bg-slate-300 bg-opacity-30 text-white flex flex-col items-center justify-center rounded-[1.5rem] px-5 w-full h-full py-10 ',
     child: [
       El({
         element: 'span',
@@ -12,7 +12,7 @@ function DayCard(date, temp , icon , description, status) {
       }),
       El({
         element: 'img',
-        className: 'w-16 h-16',
+        className: 'sm:w-16 sm:h-16 w-14 h-14',
         src: `http://openweathermap.org/img/wn/${icon}@2x.png`,
       }),
       El({
@@ -21,8 +21,8 @@ function DayCard(date, temp , icon , description, status) {
       }),
       El({
         element: 'span',
-        className: 'sm:text-sm text-[.5rem]',
-        child: `${description}`,
+        className: 'sm:text-sm',
+        child: `${status}`,
       }),
     ],
   });

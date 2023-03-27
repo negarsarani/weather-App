@@ -6,7 +6,7 @@ import { MainCard } from './MainCard';
 export function CenterCard() {
   return El({
     element: 'div',
-    className: 'flex items-center justify-center flex-col gap-3 ',
+    className: 'flex items-center justify-center flex-col ',
     child: [location('px-14 rounded-2xl '), Date(), MainCard()],
   });
 }

@@ -16,6 +16,7 @@ body {
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
+  /* overflow-y: hidden; */
   /* background-color: aqua; */
 }
 @font-face { 

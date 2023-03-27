@@ -20,7 +20,7 @@ export function Search() {
         El({
           element: 'input',
           className:
-            'backdrop-blur-sm bg-slate-300 bg-opacity-60 outline-none placeholder:text-white text-white p-2 px-3 w-full rounded-3xl shadow-md  z-20 ',
+            'bg-backdrop-blur-sm bg-slate-300 bg-opacity-60 outline-none placeholder:text-white text-white p-2 px-3 w-full rounded-3xl shadow-md  z-20 ',
           placeholder: 'Search your city...',
           onclick: function name() {
             ListItems();

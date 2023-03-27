@@ -6,7 +6,10 @@ import { DaysCards } from './DaysCards';
 export function Main() {
     return El({
         element:"div",
-        className:" flex flex-col gap-10 h-full justify-center ",
-        child:[CenterCard() , DaysCards()]
+        className:" flex sm:flex-col flex-grow   w-full items-center justify-center gap-5 pt-2 ",
+        child:[
+            CenterCard() 
+            , DaysCards()
+        ]
     })
 }
