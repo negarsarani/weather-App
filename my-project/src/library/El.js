@@ -10,6 +10,9 @@ const El = ({ element, child, dataset, ...rest }) => {
       el.dataset[key] = dataset[key];
     }
   }
+  if (eventListener) {
+    eventListener.map((el) => elem.addEventListener(el.event, el.callback));
+  }
   return el;
 };
 

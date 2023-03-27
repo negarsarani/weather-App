@@ -4,21 +4,38 @@ import { submit } from './functions';
 export function FormPage() {
   return El({
     element: 'div',
-    className: 'h-full w-full backdrop-blur-sm bg-slate-300 bg-opacity-30 flex items-center justify-center ',
+    className:
+      'h-full w-full backdrop-blur-sm bg-slate-300 bg-opacity-30 flex items-center justify-center ',
     child: El({
       element: 'div',
       className: 'bg-white bg-backdrop-blur-sm bg-slate-300 bg-opacity-30 ',
       child: El({
-        element:"div",
-        className:"",
-        child:[
+        element: 'div',
+        className: 'flex felx-col items-center justify-center  p-10',
+        child: [
           El({
-            element:"div",
-            className:"",
-            child:""
-          })
+            element: 'div',
+            className: 'flex gap-5 text-[#354458] font-Lobster',
+            child: [
+              El({
+                element: 'button',
+                className: 'hover:text-black hover:text-xl ',
+                child: 'Sing up',
+              }),
+              El({
+                element: 'span',
+                child: '/',
+              }),
+              El({
+                element: 'button',
+                className: 'hover:text-black hover:text-xl ',
+                child: 'Login',
+              }),
+            ],
+          }),
+          El({}),
         ],
-      })
+      }),
     }),
   });
   // return El({
