@@ -1,5 +1,5 @@
 import El from '../../../library/El';
-import { NewUser, submit } from '../functions';
+import { NewUser } from './functions';
 
 export function SingUp(form) {
   form.innerHTML = '';
@@ -83,27 +83,27 @@ export function SingUp(form) {
           ],
         }),
         El({
-            element: 'div',
-            className: 'mb-6',
-            child: [
-              El({
-                element: 'lable',
-                for: 'password',
-                className:
-                  'block mb-2 text-sm font-medium text-gray-900 dark:text-white',
-                child: 'Repeat password',
-              }),
-              El({
-                element: 'input',
-                id: 'REpassword',
-                type: 'password',
-                className:
-                  'bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500',
-                placeholder: 'Repeat Password',
-                required: true,
-              }),
-            ],
-          }),
+          element: 'div',
+          className: 'mb-6',
+          child: [
+            El({
+              element: 'lable',
+              for: 'password',
+              className:
+                'block mb-2 text-sm font-medium text-gray-900 dark:text-white',
+              child: 'Repeat password',
+            }),
+            El({
+              element: 'input',
+              id: 'REpassword',
+              type: 'password',
+              className:
+                'bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500',
+              placeholder: 'Repeat Password',
+              required: true,
+            }),
+          ],
+        }),
         El({
           element: 'div',
           className: 'flex items-start mb-6',

@@ -1,6 +1,5 @@
 import El from '../../library/El';
 import { Route } from '../../routes';
-import { submit } from './functions';
 import { Login } from './Login';
 import { SingUp } from './Signup';
 

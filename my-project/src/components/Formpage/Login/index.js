@@ -1,12 +1,17 @@
 import El from '../../../library/El';
-import { submit } from '../functions';
+import { findUser } from './functions';
 
 export function Login(form) {
   form.innerHTML = ""
   form.append(
     El({
       element: 'form',
-      onsubmit: submit,
+      eventListener: [
+        {
+          event: 'submit',
+          callback: findUser,
+        },
+      ],
       child: [
         El({
           element: 'div',
@@ -26,6 +31,7 @@ export function Login(form) {
               className:
                 'bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500',
               placeholder: 'name@gmail.com',
+              dataset: { valueForm: 'value' },
               required: true,
             }),
           ],
@@ -47,6 +53,7 @@ export function Login(form) {
               type: 'password',
               className:
                 'bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500',
+                dataset: { valueForm: 'value' },
               required: true,
             }),
           ],
@@ -64,7 +71,7 @@ export function Login(form) {
                 className:
                   'w-4 h-4 border border-gray-300 rounded bg-gray-50 focus:ring-3 focus:ring-blue-300 dark:bg-gray-700 dark:border-gray-600 dark:focus:ring-blue-600 dark:ring-offset-gray-800 dark:focus:ring-offset-gray-800',
                 type: 'checkbox',
-                required: 'true',
+                dataset: { valueForm: 'value' },
               }),
             }),
             El({
