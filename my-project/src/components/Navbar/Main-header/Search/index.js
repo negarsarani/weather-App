@@ -1,4 +1,5 @@
 import El from '../../../../library/El';
+import { toggleLoading } from '../../../../library/Loading';
 import { renderLocation } from '../../../../library/Location';
 import { CityCountry } from '../../../Location';
 import { renderMainCard } from '../../../Main/CenterCard/MainCard';
@@ -29,12 +30,15 @@ export function Search() {
             const card = document.getElementById('card');
             const value = e.target.value;
             const daysCard = document.getElementById('days-cards');
+            toggleLoading();
             CityCountry(value);
             CurrentData(value).then((data) => {
               [...location2].map((item) => renderLocation(data, item));
               renderMainCard(data, card);
             });
-            FutureData(value).then((data) => renderDaysCards(data, daysCard));
+            FutureData(value)
+              .then((data) => renderDaysCards(data, daysCard))
+              .then(() => toggleLoading());
           },
         }),
         El({

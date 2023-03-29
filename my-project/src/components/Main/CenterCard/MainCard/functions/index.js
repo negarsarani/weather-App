@@ -1,4 +1,5 @@
 import { getData, key } from '../../../../../library/Fetch/GetApi';
+import { toggleLoading } from '../../../../../library/Loading';
 
 let url_current = `https://api.openweathermap.org/data/2.5/weather?appid=${key}&units=metric`;
 
