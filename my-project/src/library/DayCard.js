@@ -4,7 +4,7 @@ function DayCard(date, temp , icon , description, status) {
   return El({
     element: 'div',
     className:
-      'backdrop-blur-sm bg-slate-600 bg-opacity-50 text-white flex flex-col items-center justify-center rounded-[1.5rem] xl:p-14 lg:p-10 md:p-8 sm:p-5 w-full sm:w-fit py-1 ',
+      'bg-white bg-opacity-20 backdrop-blur-lg rounded drop-shadow-lg text-white flex flex-col items-center justify-center rounded-[1.5rem] h-fit sm:h-full py-1  w-full sm:w-3/12 sm:p-2 sm:text-xl',
     child: [
       El({
         element: 'span',
@@ -21,7 +21,7 @@ function DayCard(date, temp , icon , description, status) {
       }),
       El({
         element: 'span',
-        className: 'sm:text-sm',
+        className: 'sm:text-lg text-sm ',
         child: `${status}`,
       }),
     ],
