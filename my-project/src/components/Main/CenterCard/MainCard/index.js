@@ -1,4 +1,5 @@
 import El from '../../../../library/El';
+import { toggleLoading } from '../../../../library/Loading';
 import { CurrentData } from './functions';
 
 export function MainCard() {
@@ -6,9 +7,10 @@ export function MainCard() {
     element: 'div',
     id: 'card',
   });
-  CurrentData().then((data) => {
-    renderMainCard(data, card);
-  });
+  CurrentData()
+    .then((data) => {
+      renderMainCard(data, card);
+    })
   return card;
 }
 export function renderMainCard(arr, elem) {

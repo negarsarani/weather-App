@@ -1,5 +1,6 @@
 import DayCard from '../../../library/DayCard';
 import El from '../../../library/El';
+import { toggleLoading } from '../../../library/Loading';
 import { FutureData } from './functions';
 
 export function DaysCards() {
@@ -11,7 +12,7 @@ export function DaysCards() {
   });
   FutureData().then((res) => {
     renderDaysCards(res, elem);
-  });
+  })
   return elem;
 }
 

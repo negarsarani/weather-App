@@ -26,19 +26,20 @@ export function Search() {
           onclick: function name() {
             ListItems();
           },
-          onchange: function searchValue(e) {
+          onkeyup: function searchValue(e) {
+            console.log(e.target.value);
             const card = document.getElementById('card');
             const value = e.target.value;
-            const daysCard = document.getElementById('days-cards');
-            toggleLoading();
-            CityCountry(value);
-            CurrentData(value).then((data) => {
-              [...location2].map((item) => renderLocation(data, item));
-              renderMainCard(data, card);
-            });
-            FutureData(value)
-              .then((data) => renderDaysCards(data, daysCard))
-              .then(() => toggleLoading());
+          //   const daysCard = document.getElementById('days-cards');
+          //   toggleLoading();
+          //   CityCountry(value);
+          //   CurrentData(value).then((data) => {
+          //     [...location2].map((item) => renderLocation(data, item));
+          //     renderMainCard(data, card);
+          //   });
+          //   FutureData(value)
+          //     .then((data) => renderDaysCards(data, daysCard))
+          //     .then(() => toggleLoading());
           },
         }),
         El({

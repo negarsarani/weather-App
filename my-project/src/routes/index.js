@@ -3,6 +3,7 @@ import { FormPage } from '../components/Formpage';
 import { Login } from '../components/Formpage/Login';
 import { SingUp } from '../components/Formpage/Signup';
 import El from '../library/El';
+import { toggleLoading } from '../library/Loading';
 
 export function Route() {
   const routes =
@@ -26,6 +27,7 @@ export function Route() {
 
       return routes.appendChild(FormPage());
     case '/home':
+      
       return routes.appendChild(
         El({
           element: 'div',
@@ -33,6 +35,7 @@ export function Route() {
           child: [navbar(), Main()],
         })
       );
+      
     default:
       break;
   }

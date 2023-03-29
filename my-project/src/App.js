@@ -4,7 +4,8 @@ import 'flowbite';
 import { Main, navbar } from './components';
 import { FormPage } from './components/Formpage';
 import { Route } from './routes';
-import { Loading } from './library/Loading';
+import { toggleLoading } from './library/Loading';
+
 function App() {
   const app = [
     El({
@@ -16,7 +17,7 @@ function App() {
     El({
       element: 'div',
       className:
-        'invisible h-screen z-[1000] absolute inset-x-0 flex items-center justify-center shadow-2xl',
+        'invisible h-screen z-[1000] absolute inset-x-0 flex items-center justify-center shadow-2xl ',
       id: 'loading',
     }),
   ];
