@@ -2,6 +2,7 @@ import El from '../../../../library/El';
 import { ListItems } from './List';
 import { debounce } from 'lodash/function.js';
 import { searchValue } from './functions';
+import { checkHistory } from './List/functions';
 
 export function Search() {
   return El({
@@ -26,26 +27,27 @@ export function Search() {
           onclick: function name() {
             ListItems();
           },
+          onload: function name() {
+            checkHistory();
+          },
         }),
         El({
           element: 'div',
           id: 'list-items',
-          className: ' absolute w-full flex items-center justify-center z-0 ',
+          className: 'hidden absolute w-full flex items-center justify-center z-0 ',
           child: El({
             element: 'div',
             className: 'bg-[#2c3333] w-10/12 text-white rounded-b-md ',
             child: [
               El({
                 element: 'ul',
-                className: 'flex w-full p-5 flex-col',
-                child: [
-                  
-                ],
+                className: 'flex w-full p-5 flex-col gap-2',
+                id: 'ul-history',
               }),
               El({
                 element: 'div',
                 className:
-                  'w-full cursor-pointer flex  gap-2 hover:bg-[#49484e] justify-center p-2 py-4 rounded-b-md ',
+                  'w-full cursor-pointer flex  gap-2 hover:bg-[#49484e] justify-center p-2 py-4 rounded-b-md',
                 child: [
                   El({
                     element: 'span',

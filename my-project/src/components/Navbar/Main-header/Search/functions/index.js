@@ -5,6 +5,7 @@ import { renderMainCard } from '../../../../Main/CenterCard/MainCard';
 import { CurrentData } from '../../../../Main/CenterCard/MainCard/functions';
 import { renderDaysCards } from '../../../../Main/DaysCards';
 import { FutureData } from '../../../../Main/DaysCards/functions';
+import { checkHistory } from '../List/functions';
 
 export function searchValue(e) {
   const location2 = document.getElementsByClassName('location');
@@ -15,6 +16,7 @@ export function searchValue(e) {
   openLoading();
   CityCountry(value);
   CurrentData(value).then((data) => {
+    checkHistory();
     [...location2].map((item) => renderLocation(data, item));
     renderMainCard(data, card);
   });

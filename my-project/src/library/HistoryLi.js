@@ -1,6 +1,6 @@
 import El from './El';
 
-export function LiList(params) {
+export function HistoryLi(city , country) {
   return El({
     element: 'div',
     className:
@@ -8,7 +8,7 @@ export function LiList(params) {
     child: [
       El({
         element: 'span',
-        child: `tehran , iran`,
+        child: `${city} , ${country}`,
       }),
     ],
   });
