@@ -1,13 +1,14 @@
-export function localStorage(items) {
+import { arrayLocal } from '../../../../../Location';
+
+export function getLocalstorage() {
+  const myValue = localStorage.getItem('Items');
+  return JSON.parse(myValue);
+}
+
+export function setLocalStorage() {
   const array = [...arrayLocal];
   const uniqueArray = array.filter((obj, index, self) => {
     return index === self.findIndex((o) => o.city === obj.city);
   });
-  localStorage.setItem('Items', JSON.stringify(uniqueArray));
-}
-
-export function localStoragepp() {
-  const myValue = localStorage.getItem('Items');
-  console.log(myValue);
-  return JSON.parse(myValue);
+  return localStorage.setItem('Items', JSON.stringify(uniqueArray));
 }

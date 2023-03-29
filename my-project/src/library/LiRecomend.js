@@ -3,16 +3,12 @@ import El from './El';
 export function LiList(params) {
   return El({
     element: 'div',
-    className: 'backdrop-blur-sm bg-slate-300 bg-opacity-30 text-white flex justify-between',
+    className:
+      'backdrop-blur-sm bg-[#6b7280] hover:bg-[#9ca3af] bg-opacity-30 text-white flex justify-center p-1 rounded-2xl cursor-pointer hover:text-slate-900',
     child: [
       El({
         element: 'span',
-        className: `theran , iran`,
-      }),
-      El({
-        element: 'img',
-        className: 'hidden hover:flex',
-        src: './src/styles/assets/svgs/close.svg',
+        child: `tehran , iran`,
       }),
     ],
   });

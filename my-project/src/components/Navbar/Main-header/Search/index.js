@@ -15,7 +15,7 @@ export function Search() {
         El({
           element: 'input',
           className:
-            'bg-backdrop-blur-sm bg-slate-300 bg-opacity-60 outline-none placeholder:text-white text-white p-2 px-3 w-full rounded-3xl shadow-md  z-20 ',
+            'bg-backdrop-blur-sm bg-slate-300 bg-opacity-60 outline-none placeholder:text-white text-white p-2 px-3 w-full rounded-3xl shadow-md cursor-pointer z-20 ',
           placeholder: 'Search your city...',
           eventListener: [
             {
@@ -23,49 +23,42 @@ export function Search() {
               callback: debounce(searchValue, 1000),
             },
           ],
-          // onclick: function name() {
-          //   ListItems();
-          // },
+          onclick: function name() {
+            ListItems();
+          },
         }),
         El({
           element: 'div',
           id: 'list-items',
-          className:
-            'hidden absolute w-full flex items-center justify-center z-0',
+          className: ' absolute w-full flex items-center justify-center z-0 ',
           child: El({
             element: 'div',
-            className: 'bg-[#2C3333] px-10  text-white',
-            child: El({
-              element: 'ul',
-              className: 'flex flex-col',
-              child: [
-                El({
-                  element: 'li',
-                  className: '',
-                  child: 'salam',
-                }),
-                El({
-                  element: 'li',
-                  className: '',
-                  child: 'salam',
-                }),
-                El({
-                  element: 'li',
-                  className: '',
-                  child: 'salam',
-                }),
-                El({
-                  element: 'li',
-                  className: '',
-                  child: 'salam',
-                }),
-                El({
-                  element: 'li',
-                  className: '',
-                  child: 'salam',
-                }),
-              ],
-            }),
+            className: 'bg-[#2c3333] w-10/12 text-white rounded-b-md ',
+            child: [
+              El({
+                element: 'ul',
+                className: 'flex w-full p-5 flex-col',
+                child: [
+                  
+                ],
+              }),
+              El({
+                element: 'div',
+                className:
+                  'w-full cursor-pointer flex  gap-2 hover:bg-[#49484e] justify-center p-2 py-4 rounded-b-md ',
+                child: [
+                  El({
+                    element: 'span',
+                    child: 'Clear All ',
+                  }),
+                  El({
+                    element: 'img',
+                    className: 'w-[1.2rem] h-[1.2rem]',
+                    src: './src/styles/assets/svgs/trash2.svg',
+                  }),
+                ],
+              }),
+            ],
           }),
         }),
       ],

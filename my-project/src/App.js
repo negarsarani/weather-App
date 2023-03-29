@@ -16,7 +16,7 @@ function App() {
     El({
       element: 'div',
       className:
-        'invisible h-screen z-[1000] absolute inset-x-0 flex items-center justify-center shadow-2xl ',
+        'invisible h-full z-[1000] absolute inset-x-0 flex items-center justify-center shadow-2xl ',
       id: 'loading',
     }),
   ];
