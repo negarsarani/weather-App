@@ -25,8 +25,13 @@ export function Loading(item) {
     }),
   });
 }
-export function toggleLoading() {
+export function openLoading() {
   const loading = document.getElementById('loading');
   loading.append(Loading(loading));
-  loading.classList.toggle('invisible');
+  loading.classList.remove('invisible');
+}
+export function closeLoading() {
+  const loading = document.getElementById('loading');
+  loading.append(Loading(loading));
+  loading.classList.add('invisible');
 }

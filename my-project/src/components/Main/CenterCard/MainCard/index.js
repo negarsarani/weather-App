@@ -1,5 +1,4 @@
 import El from '../../../../library/El';
-import { toggleLoading } from '../../../../library/Loading';
 import { CurrentData } from './functions';
 
 export function MainCard() {

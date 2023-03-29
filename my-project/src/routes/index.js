@@ -3,7 +3,6 @@ import { FormPage } from '../components/Formpage';
 import { Login } from '../components/Formpage/Login';
 import { SingUp } from '../components/Formpage/Signup';
 import El from '../library/El';
-import { toggleLoading } from '../library/Loading';
 
 export function Route() {
   const routes =

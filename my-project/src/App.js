@@ -4,7 +4,6 @@ import 'flowbite';
 import { Main, navbar } from './components';
 import { FormPage } from './components/Formpage';
 import { Route } from './routes';
-import { toggleLoading } from './library/Loading';
 
 function App() {
   const app = [
