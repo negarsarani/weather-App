@@ -1,4 +1,5 @@
 import { getJson } from '../../../../library/Fetch/JsonServer';
+import { Route } from '../../../../routes';
 
 export async function findUser(e) {
   e.preventDefault();
@@ -7,14 +8,13 @@ export async function findUser(e) {
 
   const users = await getJson('http://localhost:3005', 'users');
   const arr = [...users];
-  console.log(email);
+  console.log(arr);
   return arr.forEach((item) => {
-    console.log(item);
     if (item.email === email && item.password === password) {
-      console.log(item);
+      history.pushState('null', 'null', './home');
+      Route();
     } else {
       console.log('not found');
     }
   });
-  //   console.log(arr);
 }

@@ -6,7 +6,7 @@ export function DaysCards() {
   const elem = El({
     element: 'div',
     className:
-      ' flex flex-col  sm:flex-row items-center justify-center h-36  sm:h-fit ',
+      ' flex flex-col  sm:flex-row items-center justify-center sm:w-full w-5/12 h-full sm:h-fit sm:p-5 ',
     id: 'days-cards',
   });
   FutureData().then((res) => {
@@ -23,7 +23,7 @@ export function renderDaysCards(item, elem) {
   const el = El({
     element:"div",
     className:
-    "flex flex-col gap-2 sm:w-10/12 md:w-8/12 sm:flex-row items-center justify-center h-36 sm:h-fit ",
+    "flex flex-col gap-2 sm:w-10/12 md:w-8/12 sm:flex-row items-center justify-center w-28  h-full sm:h-fit sm:p-5 ",
     child:Cards
   });
   elem.append(el);

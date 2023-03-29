@@ -6,7 +6,7 @@ import { DaysCards } from './DaysCards';
 export function Main() {
     return El({
         element:"div",
-        className:" flex sm:flex-col flex-grow   w-full items-center justify-center gap-5 pt-2 ",
+        className:" flex sm:flex-col flex-grow h-screen  w-full items-center justify-center sm:gap-5  ",
         child:[
             CenterCard() 
             , DaysCards()
