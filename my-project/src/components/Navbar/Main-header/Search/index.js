@@ -2,7 +2,7 @@ import El from '../../../../library/El';
 import { ListItems } from './List';
 import { debounce } from 'lodash/function.js';
 import { searchValue } from './functions';
-import { checkHistory } from './List/functions';
+import { checkHistory, DeleteLocalStorage } from './List/functions';
 
 export function Search() {
   return El({
@@ -34,7 +34,8 @@ export function Search() {
         El({
           element: 'div',
           id: 'list-items',
-          className: 'hidden absolute w-full flex items-center justify-center z-0 ',
+          className:
+            'hidden absolute w-full flex items-center justify-center z-0 ',
           child: El({
             element: 'div',
             className: 'bg-[#2c3333] w-10/12 text-white rounded-b-md ',
@@ -48,6 +49,12 @@ export function Search() {
                 element: 'div',
                 className:
                   'w-full cursor-pointer flex  gap-2 hover:bg-[#49484e] justify-center p-2 py-4 rounded-b-md',
+                eventListener: [
+                  {
+                    event: 'click',
+                    callback:DeleteLocalStorage
+                  },
+                ],
                 child: [
                   El({
                     element: 'span',

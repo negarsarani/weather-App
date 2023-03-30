@@ -9,10 +9,12 @@ export function getLocalstorage() {
 
 export function setLocalStorage() {
   const array = [...arrayLocal];
-  const uniqueArray = array.filter((obj, index, self) => {
-    return index === self.findIndex((o) => o.city === obj.city);
-  });
-  return localStorage.setItem('Items', JSON.stringify(uniqueArray));
+  const uniqueCities = new Set(array.map((item) => item.city));
+  const uniqueArray = Array.from(uniqueCities).map((city) =>
+    array.find((item) => item.city === city)
+  );
+
+  localStorage.setItem('Items', JSON.stringify(uniqueArray));
 }
 
 export function checkHistory() {
@@ -37,8 +39,8 @@ export function checkHistory() {
           ],
         })
       )
-      // arrayLocal = ''
-    : renderHistoryLi(ul);
+    : // arrayLocal = ''
+      renderHistoryLi(ul);
 }
 export function renderHistoryLi(params) {
   const ul = document.getElementById('ul-history');
@@ -46,4 +48,9 @@ export function renderHistoryLi(params) {
   array.length <= 6 ? array : (array = array.slice(-6));
   // ul.innerHTML = '';
   array.map((item) => ul.append(HistoryLi(item.city, item.country)));
+}
+
+export function DeleteLocalStorage(params) {
+  localStorage.removeItem('Items');
+  checkHistory();
 }

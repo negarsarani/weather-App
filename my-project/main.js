@@ -6,6 +6,6 @@ import { openLoading } from './src/library/Loading';
 const main = document.getElementById('app');
 history.pushState(null, null, '/home');
 main.appendChild(App());
-// openLoading()
+openLoading()
 Route()
 window.addEventListener('popstate',Route)

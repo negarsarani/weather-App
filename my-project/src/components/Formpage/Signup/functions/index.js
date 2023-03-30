@@ -13,6 +13,6 @@ export function NewUser(e) {
     password: password,
   };
   postData('http://localhost:3005', 'users', obj);
-  history.pushState(null, null, '/home');
+  history.pushState(null, null, '/login');
   Route();
 }

@@ -1,4 +1,5 @@
 import El from '../../../../library/El';
+import { closeLoading } from '../../../../library/Loading';
 import { CurrentData } from './functions';
 
 export function MainCard() {
@@ -9,6 +10,9 @@ export function MainCard() {
   CurrentData()
     .then((data) => {
       renderMainCard(data, card);
+      setTimeout(() => {
+        closeLoading()
+      }, 800);
     })
   return card;
 }
