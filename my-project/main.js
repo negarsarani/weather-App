@@ -3,9 +3,16 @@ import 'flowbite';
 import App from './src/app.js';
 import { Route } from './src/routes';
 import { openLoading } from './src/library/Loading';
+import Cookies from 'js-cookie';
 const main = document.getElementById('app');
-history.pushState(null, null, '/home');
+// history.pushState(null, null, '/login');
+// main.appendChild(App());
 main.appendChild(App());
-openLoading()
-Route()
-window.addEventListener('popstate',Route)
+if (Cookies.get('user')) {
+    openLoading()
+  history.pushState(null, null, '/home');
+} else {
+  history.pushState(null, null, '/login');
+}
+Route();
+window.addEventListener('popstate', Route);

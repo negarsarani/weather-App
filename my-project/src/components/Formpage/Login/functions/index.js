@@ -1,6 +1,6 @@
 import { getJson } from '../../../../library/Fetch/JsonServer';
 import { Route } from '../../../../routes';
-
+import Cookies from 'js-cookie';
 export async function findUser(e) {
   e.preventDefault();
   const targetValue = e.target;
@@ -11,6 +11,7 @@ export async function findUser(e) {
   console.log(arr);
   return arr.forEach((item) => {
     if (item.email === email && item.password === password) {
+      Cookies.set('user', `${item.email}`, { expires: 1, path: '/' });
       history.pushState('null', 'null', './home');
       Route();
     } else {

@@ -1,9 +1,11 @@
+import Cookies from 'js-cookie';
 import { Main, navbar } from '../components';
 import { FormPage } from '../components/Formpage';
 import { Login } from '../components/Formpage/Login';
 import { SingUp } from '../components/Formpage/Signup';
 import El from '../library/El';
-
+const isPrivate = (routesEl, child) =>
+  Cookies.get('user') && routesEl.appendChild(child);
 export function Route() {
   const routes =
     document.getElementById('routes') ||
@@ -26,15 +28,14 @@ export function Route() {
 
       return routes.appendChild(FormPage());
     case '/home':
-      
-      return routes.appendChild(
+      return isPrivate(
+        routes,
         El({
           element: 'div',
           className: 'w-full flex flex-col h-full items-center ',
           child: [navbar(), Main()],
         })
       );
-      
     default:
       break;
   }
